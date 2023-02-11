@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  nest_server:
+    image: neostefan/coding-challenge-nestjs
+    container_name: backend-challenge
+    ports: 
+      - 4000:3000
+    networks:
+      - challenge
+    environment:
+      - DATABASE_URL=postgresql://postgres:123@20.108.66.200:5434/nest?schema=public
+  
+  react_front:
+    image: neostefan/coding-challenge-reactjs
+    container_name: frontend-challenge
+    ports:
+      - 4040:80
+    networks:
+      - challenge
+
+networks:
+  challenge:
