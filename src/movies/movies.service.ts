@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Movie } from './movies.model';
+import { Movie } from '@prisma/client';
 import { DbService } from 'src/db/db.service';
 
 @Injectable()
